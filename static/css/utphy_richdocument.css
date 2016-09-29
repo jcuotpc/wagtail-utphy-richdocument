@@ -1,0 +1,92 @@
+/* University of Toronto Color Palettes as described in
+http://universityrelations.utoronto.ca/sc/u-of-t-branding/
+*/
+.block-table, .bustout, .code_chunk,
+.doc_byline, .math-formula, .quote {
+  margin: 1rem 0; }
+
+.quote {
+  background-color: #dae5cd; }
+
+blockquote {
+  border-left: none;
+  color: #5c763d;
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center; }
+  @media screen and (min-width: 640px) {
+    blockquote {
+      padding: 2rem 4rem;
+      font-size: 1.5rem; } }
+
+blockquote:before {
+  color: #c1d4ab;
+  content: '\f10e';
+  font-family: FontAwesome;
+  font-size: 1.8rem;
+  vertical-align: 2rem;
+  position: relative;
+  top: -1rem;
+  left: -1rem; }
+  @media screen and (min-width: 640px) {
+    blockquote:before {
+      top: 1rem;
+      left: -5rem; } }
+
+cite {
+  font-size: 1rem;
+  color: currentcolor;
+  display: block;
+  padding: 2rem 0; }
+
+cite > a {
+  color: inherit; }
+
+pre.content-byline {
+  color: #008bb0;
+  display: block;
+  font-family: inherit;
+  font-size: 0.8rem;
+  border-left: 3px solid #008bb0;
+  padding-left: 1rem; }
+
+.bustout {
+  background-color: #f8efef;
+  color: #5d252a; }
+
+.bustout-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 1rem; }
+  .bustout-wrapper .bustout-image {
+    flex: 1 0 auto;
+    margin-right: 1rem; }
+    @media screen and (max-width: 640px) {
+      .bustout-wrapper .bustout-image {
+        display: none; } }
+  .bustout-wrapper .bustout-text {
+    flex: 3 1 auto;
+    font-size: 1rem;
+    font-style: italic;
+    padding: 0; }
+    @media screen and (min-width: 640px) {
+      .bustout-wrapper .bustout-text {
+        font-size: 1.3rem;
+        padding: 1rem; } }
+
+.code_chunk .code-lang {
+  color: #7ba4d9;
+  font-size: small;
+  font-style: italic; }
+  .code_chunk .code-lang:after {
+    content: ': '; }
+.code_chunk code {
+  display: block; }
+  @media screen and (max-width: 640px) {
+    .code_chunk code {
+      font-size: 0.8rem; } }
+
+/*# sourceMappingURL=utphy_richdocument.css.map */

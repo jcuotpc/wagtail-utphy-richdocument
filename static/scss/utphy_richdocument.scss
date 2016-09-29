@@ -1,0 +1,149 @@
+@import "uoft_colors";
+
+$blue: $uoft-accent-colour-blue;
+$grey: $uoft-accent-colour-grey;
+$green: $uoft-accent-colour-green;
+$pink: $uoft-accent-colour-pink;
+
+// media queries
+$breakpoints: (
+        small: 0px,
+        medium: 640px,
+        large: 1024px,
+        xlarge: 1200px,
+        xxlarge: 1440px,
+);
+
+.block-table, .bustout, .code_chunk,
+.doc_byline, .math-formula, .quote {
+  margin: 1rem 0;
+}
+
+// blockquote
+.quote {
+  background-color: $green;
+}
+
+blockquote {
+  border-left: none;
+  color: darken($green, 50%);
+  //font-family: $header-font-family;
+  font-size: 1.2rem;
+  padding: 2rem;
+  text-align: center;
+
+  @media screen and (min-width: 640px) {
+    padding: 2rem 4rem;
+    font-size: 1.5rem;
+  }
+}
+
+blockquote:before {
+  color: darken($green, 10%);
+  content: '\f10e';
+  font-family: FontAwesome;
+  font-size: 1.8rem;
+  vertical-align: 2rem;
+  position: relative;
+  top: -1rem;
+  left: -1rem;
+
+  @media screen and (min-width: 640px) {
+    top: 1rem;
+    left: -5rem;
+  }
+}
+
+cite {
+  font-size: 1rem;
+  color: currentcolor;
+  display: block;
+  padding: 2rem 0;
+}
+
+cite > a {
+  color: inherit;
+}
+
+// end blockquote
+
+// byline
+pre.content-byline {
+  color: $uoft-secondary-colour-blue;
+  display: block;
+  font-family: inherit;
+  font-size: 0.8rem;
+  border-left: 3px solid $uoft-secondary-colour-blue;
+  padding-left: 1rem;
+}
+
+// byline end
+
+// bustout
+.bustout {
+  background-color: lighten($uoft-accent-colour-pink, 10%);
+  color: darken($uoft-accent-colour-pink, 60%);
+}
+
+.bustout-wrapper {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  padding: 1rem;
+
+  .bustout-image {
+    flex: 1 0 auto;
+    margin-right: 1rem;
+
+    @media screen and (max-width: 640px) {
+      display: none;
+    }
+
+  }
+
+  .bustout-text {
+    flex: 3 1 auto;
+    font-size: 1rem;
+    font-style: italic;
+    padding: 0;
+
+    @media screen and (min-width: 640px) {
+      font-size: 1.3rem;
+      padding: 1rem;
+    }
+
+  }
+}
+
+// end bustout
+
+// code
+.code_chunk {
+
+  .code-lang {
+    color: $blue;
+    font-size: small;
+    font-style: italic;
+
+    &:after {
+      content: ': ';
+    }
+  }
+
+  code {
+    display: block;
+
+    @media screen and (max-width: 640px) {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+// end code
+
+// math
+.math-formula {
+
+}

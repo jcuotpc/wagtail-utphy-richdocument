@@ -1,0 +1,14 @@
+{% extends 'utphy_richdocument/base_utphy_richdocument.html' %}
+{% load static wagtailimages_tags %}
+
+{% block streamblock %}
+    <div class="bustout-wrapper">
+        <div class="bustout-image hide-for-small-only">
+            {% image value.image fill-500x500-c100 %}
+        </div>
+        <div class="bustout-text">
+            {{ value.text }}
+        </div>
+    </div>
+{% endblock streamblock %}
+

@@ -1,0 +1,15 @@
+{% extends 'utphy_richdocument/base_utphy_richdocument.html' %}
+{% load static %}
+
+{% block streamblock %}
+    <blockquote>
+        {{ value.quote }}
+        <cite>{{ value.author }}
+            {% if value.author_url %}
+                <a href="{{ value.author_url }}">
+                    <i class="fa fa-link" aria-hidden="true"></i>
+                </a>
+            {% endif %}
+        </cite>
+    </blockquote>
+{% endblock streamblock %}

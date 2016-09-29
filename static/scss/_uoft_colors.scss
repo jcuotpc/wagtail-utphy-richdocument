@@ -1,0 +1,39 @@
+/* University of Toronto Color Palettes as described in
+http://universityrelations.utoronto.ca/sc/u-of-t-branding/
+*/
+
+$uoft-official-colour-blue: rgba(0, 42, 92, 1); // #002A5C
+$uoft-official-colour-white: rgba(255, 255, 255, 1);
+
+// UofT Secondary colors
+$uoft-secondary-colour-yellow: rgba(255, 228, 152, 1); // #FFE498
+$uoft-secondary-colour-red: rgba(227, 24, 55, 1); // #E31837
+$uoft-secondary-colour-blue: rgba(0, 139, 176, 1); // #008BB0
+$uoft-secondary-colour-black: rgba(39, 17, 0, 1); // #271100
+
+// UofT Accent colors
+$uoft-accent-colour-blue: rgba(123, 164, 217, 1); // #7BA4D9
+$uoft-accent-colour-grey: rgba(206, 207, 203, 1); // #CECFCB
+$uoft-accent-colour-pink: rgba(234, 202, 205, 1); // #EACACD
+$uoft-accent-colour-green: rgba(218, 229, 205, 1); // #DAE5CD
+
+// Palettes used in the uoft style guide
+
+// UofT Vibrant palette
+$uoft-vibrant-yellow: $uoft-secondary-colour-yellow;
+$uoft-vibrant-blue: $uoft-secondary-colour-blue;
+$uoft-vibrant-red: $uoft-secondary-colour-red;
+
+// UofT Cool palette
+$uoft-cool-accentblue: $uoft-accent-colour-blue;
+$uoft-cool-secondaryblue: $uoft-secondary-colour-blue;
+$uoft-cool-accentgreen: $uoft-accent-colour-green;
+
+// UofT Awards palette
+$uoft-awards-palette-bronze: rgba(61, 48, 40, 0.7); // #3D3028
+$uoft-awards-palette-silver: $uoft-accent-colour-grey;
+$uoft-awards-palette-gold: $uoft-secondary-colour-yellow;
+
+
+
+

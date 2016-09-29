@@ -1,0 +1,12 @@
+{% extends 'utphy_richdocument/base_utphy_richdocument.html' %}
+
+{% block streamblock %}
+    <div class="video_embed">
+        <h3>{{ value.title }}</h3>
+        <iframe
+                style='width:100%;min-height:25em'
+                src='{{ value.video_url }}' frameborder='0'
+                {% if value.allow_full_screen %}allowfullscreen{% endif %}>
+        </iframe>
+    </div>
+{% endblock streamblock %}

@@ -1,0 +1,12 @@
+{% extends 'utphy_richdocument/base_utphy_richdocument.html' %}
+{% load static %}
+
+{% block streamblock %}
+    $${{ value.math }}$$
+{% endblock streamblock %}
+
+{% block extra_js %}
+    <script type="text/javascript" async
+            src="//cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+    </script>
+{% endblock extra_js %}
