@@ -1,5 +1,7 @@
 from __future__ import unicode_literals
 
+from django.utils.encoding import force_text
+
 from wagtail.contrib.table_block.blocks import TableBlock
 from wagtail.wagtailadmin.edit_handlers import (StreamFieldPanel)
 from wagtail.wagtailcore import blocks
@@ -24,6 +26,9 @@ class CodeBlock(blocks.StructBlock):
     language = blocks.ChoiceBlock(choices=LANGUAGES, blank=False, null=False,
                                   default='python')
 
+    def get_searchable_content(self, value):
+        return [force_text(value)]
+
     class Meta:
         template = 'utphy_richdocument/blocks/code.html'
         icon = 'code'
@@ -32,6 +37,9 @@ class CodeBlock(blocks.StructBlock):
 
 class MathBlock(blocks.StructBlock):
     math = blocks.TextBlock(max_length=8000, blank=False, null=False)
+
+    def get_searchable_content(self, value):
+        return [force_text(value)]
 
     class Meta:
         template = 'utphy_richdocument/blocks/math.html'
@@ -57,6 +65,9 @@ default_table_options = {
 class TableBlock(blocks.StreamBlock):
     table = TableBlock(table_options=default_table_options)
 
+    def get_searchable_content(self, value):
+        return [force_text(value)]
+
     class Meta:
         icon = 'table'
 
@@ -69,6 +80,9 @@ class VideoBlock(blocks.StructBlock):
                   'Ex. https://www.youtube.com/embed/sdfk343244dfef5'
     )
     allow_full_screen = blocks.BooleanBlock(required=False, default=True)
+
+    def get_searchable_content(self, value):
+        return [force_text(value)]
 
     class Meta:
         template = 'utphy_richdocument/blocks/utmedia.html'
@@ -83,6 +97,9 @@ class QuoteBlock(blocks.StructBlock):
 
     # todo: add background color chooser
 
+    def get_searchable_content(self, value):
+        return [force_text(value)]
+
     class Meta:
         template = 'utphy_richdocument/blocks/quote.html'
         icon = 'openquote'
@@ -90,6 +107,9 @@ class QuoteBlock(blocks.StructBlock):
 
 class DocBylineBlock(blocks.StructBlock):
     text = blocks.TextBlock(max_length=100, rows=2, required=False)
+
+    def get_searchable_content(self, value):
+        return [force_text(value)]
 
     class Meta:
         template = 'utphy_richdocument/blocks/doc_byline.html'
@@ -104,22 +124,15 @@ class BustoutBlock(blocks.StructBlock):
     # todo: add background color chooser
     # todo: add image position chooser
 
+    def get_searchable_content(self, value):
+        return [force_text(value)]
+
     class Meta:
         template = 'utphy_richdocument/blocks/bustout.html'
         icon = 'image'
 
 
 # todo: create carousel block
-# class CarouselBlock(blocks.StreamBlock):
-#     image = ImageChooserBlock()
-#     quotation = blocks.StructBlock([
-#         ('text', blocks.TextBlock()),
-#         ('author', blocks.CharBlock()),
-#     ])
-#
-#     class Meta:
-#         icon = 'cogs'
-
 
 BLOCK_TYPES = [
     ('doc_byline', DocBylineBlock()),
@@ -142,10 +155,6 @@ class StreamFieldDoc(Page):
         null=True,
         blank=True,
         verbose_name='Content')
-
-    search_fields = Page.search_fields + [
-        index.SearchField('body'),
-    ]
 
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
