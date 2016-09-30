@@ -156,9 +156,15 @@ class StreamFieldDoc(Page):
         blank=True,
         verbose_name='Content')
 
+    search_fields = Page.search_fields + [
+        index.SearchField('body'),
+    ]
+
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
     ]
+
+
 
     class Meta:
         abstract = True
