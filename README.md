@@ -18,14 +18,14 @@ It adds the following streamfield blocks:
 
 ## Quick Start
 
-1. add "utphy_richdocument" to your INSTALLED_APPS setting:
+1. add "utphy_richdocument" to your INSTALLED_APPS setting::
 
-INSTALLED_APPS = [
-    ...
-    'utphy_richdocument',
-]
+    INSTALLED_APPS = [
+        ...
+        'utphy_richdocument',
+    ]
 
-2. In your own app create a new model which subclasses the StreamFieldDoc model:
+2. In your own app create a new model which subclasses the StreamFieldDoc model::
 
 
     from utphy_richdocument.models import StreamFieldDoc
