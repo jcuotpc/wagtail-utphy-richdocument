@@ -1,6 +1,7 @@
-# UTPHY Richdocument
+utphy richdocument
+==================
 
-This is a wagtail app written by the Department of Physics at the University of Toronto to apply on wagtail generic docs.
+This is a wagtail app to be applied on wagtail generic docs.
 It adds the following streamfield blocks:
 
 - doc_byline
@@ -12,21 +13,24 @@ It adds the following streamfield blocks:
 - table
 - media_embed
 
-## Dependencies
+Dependencies
+------------
 
-[wagtail](https://wagtail.io)
+- wagtail_ 
 
-## Quick Start
+.. _wagtail: https://wagtail.io
 
-1. add "utphy_richdocument" to your INSTALLED_APPS setting:
+Quick Start
+-----------
+
+1. add "utphy_richdocument" to your INSTALLED_APPS setting::
 
     INSTALLED_APPS = [
         ...
         'utphy_richdocument',
     ]
 
-2. In your own app create a new model which subclasses the StreamFieldDoc model:
-
+2. In your own app create a new model which subclasses the StreamFieldDoc model::
 
     from utphy_richdocument.models import StreamFieldDoc
 
