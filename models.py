@@ -23,7 +23,7 @@ class CodeBlock(blocks.StructBlock):
     )
 
     code = blocks.TextBlock(max_length=8000, rows=10, blank=False, null=False)
-    language = blocks.ChoiceBlock(choices=LANGUAGES, blank=False, null=False,
+    language = blocks.ChoiceBlock(choices=LANGUAGES, required=False,
                                   default='python')
 
     def get_searchable_content(self, value):
