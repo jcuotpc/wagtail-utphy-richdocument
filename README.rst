@@ -22,24 +22,39 @@ Dependencies
 
 Quick Start
 -----------
-1. install with::
+* install from pypy::
 
     pip install wagtail-utphy-richdocument
 
-2. add "utphy_richdocument" to your INSTALLED_APPS setting::
+* add "utphy_richdocument" to your INSTALLED_APPS setting::
 
     INSTALLED_APPS = [
         ...
         'utphy_richdocument',
     ]
 
-3. In your own app create a new model which subclasses the StreamFieldDoc model::
+* In your own app create a new model which subclasses the StreamFieldDoc model.
+
+*models.py*::
 
     from utphy_richdocument.models import StreamFieldDoc
 
     class YourModel(StreamFieldDoc):
         template = 'path_to_your_template.html'
 
-4. Run `python manage.py collectstatic` to collect the static files from the app into your own static section.
+        content_panels = Page.content_panels + [
+            # your_model_fields
+            StreamFieldPanel('body'),
+    ]
 
-5. Run `python manage.py migrate` to update the tables in your app.
+* In your template, make sure you have the following snippet:
+
+*path_to_your_template.py*::
+
+    {% for block in self.body %}
+      {{block}}
+    {% endfor %}
+
+* Run `python manage.py collectstatic` to collect the static files from the app into your own static section.
+
+* Run `python manage.py migrate` to update the tables in your app.
