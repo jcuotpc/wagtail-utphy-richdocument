@@ -26,10 +26,11 @@ Quick Start
 
     pip install wagtail-utphy-richdocument
 
-* add "utphy_richdocument" to your INSTALLED_APPS setting::
+* add "utphy_richdocument" and "wagtail.contrib.table_block" to your INSTALLED_APPS setting::
 
     INSTALLED_APPS = [
         ...
+        'wagtail.contrib.table_block',
         'utphy_richdocument',
     ]
 
