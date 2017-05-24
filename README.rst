@@ -22,11 +22,11 @@ Dependencies
 
 Quick Start
 -----------
-* install from pypy::
+install from pypy::
 
     pip install wagtail-utphy-richdocument
 
-* add "utphy_richdocument" and "wagtail.contrib.table_block" to your INSTALLED_APPS setting::
+add "utphy_richdocument" and "wagtail.contrib.table_block" to your INSTALLED_APPS setting::
 
     INSTALLED_APPS = [
         ...
@@ -39,6 +39,7 @@ Quick Start
 *models.py*::
 
     from utphy_richdocument.models import StreamFieldDoc
+    from wagtail.wagtailadmin.edit_handlers import StreamFieldPanel
 
     class YourModel(StreamFieldDoc):
         template = 'path_to_your_template.html'
@@ -56,6 +57,8 @@ Quick Start
       {{block}}
     {% endfor %}
 
-* Run `python manage.py collectstatic` to collect the static files from the app into your own static section.
+Finally run::
 
-* Run `python manage.py migrate` to update the tables in your app.
+    python manage.py collectstatic
+    python manage.py makemigrations
+    python manage.py migrate
