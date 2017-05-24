@@ -1,3 +1,19 @@
-*.pyc
+### Python template
+__pycache__/
+*.py[cod]
+*$py.class
+.DS_Store
 
-static/.sass-cache/
+# C extensions
+*.so
+*.egg-info
+
+db.sqlite3
+env.json
+.sass-cache
+
+
+# project files and folders
+archive/
+build/
+dist/
