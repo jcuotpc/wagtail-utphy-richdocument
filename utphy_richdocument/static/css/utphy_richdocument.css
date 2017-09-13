@@ -23,6 +23,7 @@ blockquote:before {
   color: #c1d4ab;
   content: '\f10e';
   font-family: FontAwesome;
+  padding-left: 1rem;
   font-size: 1.8rem;
   vertical-align: 2rem;
   position: relative;

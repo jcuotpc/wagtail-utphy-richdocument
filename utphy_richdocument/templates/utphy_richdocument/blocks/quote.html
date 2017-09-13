@@ -2,6 +2,7 @@
 {% load static %}
 
 {% block streamblock %}
+    <div class="quote">
     <blockquote>
         {{ value.quote }}
         <cite>{{ value.author }}
@@ -12,4 +13,5 @@
             {% endif %}
         </cite>
     </blockquote>
+    </div>
 {% endblock streamblock %}
