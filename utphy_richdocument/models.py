@@ -7,6 +7,7 @@ from wagtail.wagtailadmin.edit_handlers import (StreamFieldPanel)
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailcore.models import Page
+from wagtail.wagtailembeds.blocks import EmbedBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
 from wagtail.wagtailsearch import index
 
@@ -74,20 +75,21 @@ class TableBlock(blocks.StreamBlock):
 
 class VideoBlock(blocks.StructBlock):
     title = blocks.CharBlock()
-    video_url = blocks.URLBlock(
-        help_text='Insert full URL of'
-                  ' embedded video here. '
-                  'Ex. https://www.youtube.com/embed/sdfk343244dfef5'
+    embed = EmbedBlock(
+        help_text='Insert full URL of video here. '
+                  'Ex. https://youtu.be/sdfk343244dfef5'
     )
-    allow_full_screen = blocks.BooleanBlock(required=False, default=True)
+    max_width = blocks.IntegerBlock(default=1024,
+                                    help_text='Set maximum width of '
+                                              'the video frame in pixels.')
 
     def get_searchable_content(self, value):
         return [force_text(value)]
 
     class Meta:
-        template = 'utphy_richdocument/blocks/utmedia.html'
+        template = 'utphy_richdocument/blocks/video.html'
         icon = 'media'
-        label = "UofT My Media"
+        label = "Embed youtube video"
 
 
 class QuoteBlock(blocks.StructBlock):
@@ -163,8 +165,6 @@ class StreamFieldDoc(Page):
     content_panels = Page.content_panels + [
         StreamFieldPanel('body'),
     ]
-
-
 
     class Meta:
         abstract = True

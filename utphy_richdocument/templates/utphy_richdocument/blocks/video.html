@@ -1,0 +1,10 @@
+{% extends 'utphy_richdocument/base_utphy_richdocument.html' %}
+{% load wagtailcore_tags wagtailembeds_tags %}
+
+{% block streamblock %}
+    <div class="video_embed">
+
+        <h3>{{ value.title }}</h3>
+        {% embed value.embed.url max_width=value.max_width %}
+    </div>
+{% endblock streamblock %}
