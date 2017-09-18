@@ -71,12 +71,12 @@ cite > a {
 
 // byline
 pre.content-byline {
-  color: $uoft-secondary-colour-blue;
+  color: $uoft-official-colour-blue;
   display: block;
   font-family: inherit;
-  font-size: 0.8rem;
-  border-left: 3px solid $uoft-secondary-colour-blue;
-  padding-left: 1rem;
+  font-size: 0.9rem;
+  border-bottom: 2px solid $uoft-accent-colour-green;
+  padding-bottom: 0.3rem;
 }
 
 // byline end

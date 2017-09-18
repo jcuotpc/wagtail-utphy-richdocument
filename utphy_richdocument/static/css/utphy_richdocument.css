@@ -58,12 +58,12 @@ cite > a {
   color: inherit; }
 
 pre.content-byline {
-  color: #008bb0;
+  color: #002a5c;
   display: block;
   font-family: inherit;
-  font-size: 0.8rem;
-  border-left: 3px solid #008bb0;
-  padding-left: 1rem; }
+  font-size: 0.9rem;
+  border-bottom: 2px solid #dae5cd;
+  padding-bottom: 0.3rem; }
 
 .bustout {
   background-color: #f8efef;
