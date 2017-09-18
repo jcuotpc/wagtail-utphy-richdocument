@@ -1,12 +1,26 @@
 /* University of Toronto Color Palettes as described in
 http://universityrelations.utoronto.ca/sc/u-of-t-branding/
 */
+:root {
+  --primary-color: rgba(0, 42, 92, 1);
+  --secondary-color: rgba(255, 255, 255, 1);
+  --contrast-color: rgba(218, 229, 205, 1);
+  --white: rgba(255, 255, 255, 1);
+  --blue-accent: rgba(123, 164, 217, 1);
+  --grey-accent: rgba(206, 207, 203, 1);
+  --green-accent: rgba(218, 229, 205, 1);
+  --pink-accent: rgba(234, 202, 205, 1);
+  --yellow-secondary: rgba(255, 228, 152, 1);
+  --blue-secondary: rgba(0, 139, 176, 1);
+  --red-secondary: rgba(227, 24, 55, 1);
+  --black-secondary: rgba(39, 17, 0, 1); }
+
 .block-table, .bustout, .code_chunk,
 .doc_byline, .math-formula, .quote {
   margin: 1rem 0; }
 
 .quote {
-  background-color: #dae5cd; }
+  background-color: #f3f6ef; }
 
 blockquote {
   border-left: none;
@@ -20,11 +34,11 @@ blockquote {
       font-size: 1.5rem; } }
 
 blockquote:before {
-  color: #c1d4ab;
+  color: #a8c28a;
   content: '\f10e';
   font-family: FontAwesome;
-  padding-left: 1rem;
   font-size: 1.8rem;
+  margin-left: 1rem;
   vertical-align: 2rem;
   position: relative;
   top: -1rem;

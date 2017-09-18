@@ -5,6 +5,8 @@ $grey: $uoft-accent-colour-grey;
 $green: $uoft-accent-colour-green;
 $pink: $uoft-accent-colour-pink;
 
+$quote-color: $green;
+
 // media queries
 $breakpoints: (
         small: 0px,
@@ -21,13 +23,12 @@ $breakpoints: (
 
 // blockquote
 .quote {
-  background-color: $green;
+  background-color: lighten($quote-color, 10%)
 }
 
 blockquote {
   border-left: none;
-  color: darken($green, 50%);
-  //font-family: $header-font-family;
+  color: darken($quote-color, 50%);
   font-size: 1.2rem;
   padding: 2rem;
   text-align: center;
@@ -39,11 +40,11 @@ blockquote {
 }
 
 blockquote:before {
-  color: darken($green, 10%);
+  color: darken($quote-color, 20%);
   content: '\f10e';
   font-family: FontAwesome;
   font-size: 1.8rem;
-  padding-left: 1rem;
+  margin-left: 1rem;
   vertical-align: 2rem;
   position: relative;
   top: -1rem;
