@@ -9,7 +9,7 @@ os.chdir(os.path.normpath(os.path.join(os.path.abspath(__file__), os.pardir)))
 
 setup(
     name='wagtail-utphy-richdocument',
-    version='0.7.3',
+    version='0.7.4',
     url='https://github.com/jcuotpc/wagtail-utphy-richdocument',
     packages=find_packages(),
     include_package_data=True,
