@@ -89,7 +89,7 @@ class VideoBlock(blocks.StructBlock):
     class Meta:
         template = 'utphy_richdocument/blocks/video.html'
         icon = 'media'
-        label = "Embed youtube video"
+        label = "Embed youtube or vimeo video"
 
 
 class QuoteBlock(blocks.StructBlock):
