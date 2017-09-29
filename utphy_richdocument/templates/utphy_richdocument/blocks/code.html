@@ -4,7 +4,7 @@
 {% block extra_css %}
     {{ block.super }}
     <link rel="stylesheet"
-          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/styles/default.min.css">
+          href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
 {% endblock extra_css %}
 
 {% block streamblock %}
@@ -13,14 +13,12 @@
             {{ value.language }} code
         </div>
 
-        <pre>
-        <code class="{{ value.language }}"> {{ value.code }} </code>
-     </pre>
+        <pre><code class="{{ value.language }}"> {{ value.code }}</code></pre>
     </section>
 {% endblock streamblock %}
 
 {% block extra_js %}
     {{ block.super }}
-    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.7.0/highlight.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
     <script>hljs.initHighlightingOnLoad();</script>
 {% endblock extra_js %}
