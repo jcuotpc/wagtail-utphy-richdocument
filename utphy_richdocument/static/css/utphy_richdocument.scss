@@ -84,7 +84,7 @@ pre.content-byline {
 // bustout
 .bustout {
   color: $uoft-secondary-colour-black;
-  background-color: lighten($uoft-secondary-colour-black, 80%);
+  border: 1px solid lighten($uoft-secondary-colour-black, 70%);
 }
 
 .bustout-wrapper {
