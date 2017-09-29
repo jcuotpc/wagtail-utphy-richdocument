@@ -8,13 +8,15 @@
 {% endblock extra_css %}
 
 {% block streamblock %}
-    <div class="code-lang">
+    <section class="code_chunk">
+        <div class="code-lang">
             {{ value.language }} code
-    </div>
+        </div>
 
-    <pre>
+        <pre>
         <code class="{{ value.language }}"> {{ value.code }} </code>
      </pre>
+    </section>
 {% endblock streamblock %}
 
 {% block extra_js %}

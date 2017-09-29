@@ -2,16 +2,17 @@
 {% load static %}
 
 {% block streamblock %}
-    <div class="quote">
-    <blockquote>
-        {{ value.quote }}
-        <cite>{{ value.author }}
-            {% if value.author_url %}
-                <a href="{{ value.author_url }}">
-                    <i class="fa fa-link" aria-hidden="true"></i>
-                </a>
-            {% endif %}
-        </cite>
-    </blockquote>
-    </div>
+    <section class="quote">
+        <blockquote>
+            {{ value.quote }}
+            <cite>{{ value.author }}
+                {% if value.author_url %}
+                    <a href="{{ value.author_url }}"
+                       aria-label="link to autor website">
+                        <i class="fa fa-link" aria-hidden="true"></i>
+                    </a>
+                {% endif %}
+            </cite>
+        </blockquote>
+    </section>
 {% endblock streamblock %}

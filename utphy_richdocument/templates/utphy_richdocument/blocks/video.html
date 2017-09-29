@@ -2,9 +2,9 @@
 {% load wagtailcore_tags wagtailembeds_tags %}
 
 {% block streamblock %}
-    <div class="video_embed">
+    <section class="video_embed">
 
         <h3>{{ value.title }}</h3>
         {% embed value.embed.url max_width=value.max_width %}
-    </div>
+    </section>
 {% endblock streamblock %}

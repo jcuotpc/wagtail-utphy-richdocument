@@ -23,7 +23,7 @@ $breakpoints: (
 
 // blockquote
 .quote {
-  background-color: lighten($quote-color, 10%)
+  //background-color: lighten($quote-color, 10%)
 }
 
 blockquote {
@@ -83,8 +83,8 @@ pre.content-byline {
 
 // bustout
 .bustout {
-  background-color: lighten($uoft-accent-colour-pink, 10%);
-  color: darken($uoft-accent-colour-pink, 60%);
+  color: $uoft-secondary-colour-black;
+  background-color: lighten($uoft-secondary-colour-black, 80%);
 }
 
 .bustout-wrapper {
@@ -96,7 +96,7 @@ pre.content-byline {
   padding: 1rem;
 
   .bustout-image {
-    flex: 1 0 auto;
+    flex: 1 0 50%;
     margin-right: 1rem;
 
     @media screen and (max-width: 640px) {
@@ -106,7 +106,7 @@ pre.content-byline {
   }
 
   .bustout-text {
-    flex: 3 1 auto;
+    flex: 1 1 auto;
     font-size: 1rem;
     font-style: italic;
     padding: 0;
