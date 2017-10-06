@@ -2,15 +2,13 @@
 {% load static wagtailimages_tags %}
 
 {% block streamblock %}
-    <section class="bustout">
-        <div class="bustout-wrapper">
-            <div class="bustout-image">
-                {% image value.image max-500x500 %}
-            </div>
-            <div class="bustout-text">
-                {{ value.text }}
-            </div>
-        </div>
-    </section>
+<div class="bustout-wrapper">
+    <div class="bustout-image">
+        {% image value.image max-500x500 %}
+    </div>
+    <div class="bustout-text">
+        {{ value.text }}
+    </div>
+</div>
 {% endblock streamblock %}
 
