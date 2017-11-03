@@ -1,15 +1,29 @@
 from __future__ import unicode_literals
 
+from django.db import models
 from django.utils.encoding import force_text
 
 from wagtail.contrib.table_block.blocks import TableBlock
-from wagtail.wagtailadmin.edit_handlers import (StreamFieldPanel)
+from wagtail.wagtailadmin.edit_handlers import (FieldPanel, StreamFieldPanel,
+                                                MultiFieldPanel)
 from wagtail.wagtailcore import blocks
 from wagtail.wagtailcore.fields import StreamField
 from wagtail.wagtailcore.models import Page
+from wagtail.wagtaildocs.blocks import DocumentChooserBlock
 from wagtail.wagtailembeds.blocks import EmbedBlock
 from wagtail.wagtailimages.blocks import ImageChooserBlock
+from wagtail.wagtailimages.edit_handlers import ImageChooserPanel
 from wagtail.wagtailsearch import index
+
+ 
+
+class LinksBlock(blocks.StructBlock):
+    link_external = blocks.URLBlock(required=False)
+    link_page = blocks.PageChooserBlock(required=False)
+    link_document = DocumentChooserBlock(required=False)
+
+    class Meta:
+        icon = 'link'
 
 
 class CodeBlock(blocks.StructBlock):
@@ -134,7 +148,25 @@ class BustoutBlock(blocks.StructBlock):
         icon = 'image'
 
 
-# todo: create carousel block
+class PictureBlock(blocks.StructBlock):
+    photo = ImageChooserBlock()
+    caption = blocks.CharBlock(required=False)
+    author = blocks.CharBlock(required=False)
+    links = LinksBlock()
+
+    class Meta:
+        icon = 'image'
+
+
+class AlbumBlock(blocks.StructBlock):
+    has_slideshow = blocks.BooleanBlock()
+    add_pictures = blocks.ListBlock(
+        PictureBlock()
+    )
+
+    class Meta:
+        icon = 'cogs'
+
 
 BLOCK_TYPES = [
     ('doc_byline', DocBylineBlock()),
@@ -147,6 +179,7 @@ BLOCK_TYPES = [
     ('code_chunk', CodeBlock()),
     ('math_formula', MathBlock()),
     ('table', TableBlock()),
+    ('album', AlbumBlock()),
     ('media_embed', VideoBlock()),
 ]
 
