@@ -151,7 +151,7 @@ class BustoutBlock(blocks.StructBlock):
 class PictureBlock(blocks.StructBlock):
     photo = ImageChooserBlock()
     caption = blocks.CharBlock(required=False)
-    author = blocks.CharBlock(required=False)
+    credit = blocks.CharBlock(required=False)
     links = LinksBlock()
 
     class Meta:
@@ -159,7 +159,7 @@ class PictureBlock(blocks.StructBlock):
 
 
 class AlbumBlock(blocks.StructBlock):
-    has_slideshow = blocks.BooleanBlock()
+    has_slideshow = blocks.BooleanBlock(required=False)
     add_pictures = blocks.ListBlock(
         PictureBlock()
     )
