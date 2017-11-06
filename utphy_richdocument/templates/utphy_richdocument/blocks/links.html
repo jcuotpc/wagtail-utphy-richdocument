@@ -1,0 +1,15 @@
+{% load wagtailcore_tags %}
+
+{% block streamblock %}
+    {#    {% include_block value.links %}#}
+    {% if value.links.link_external %}
+        <a href="{{ value.links.link_external }}">url</a>
+    {% endif %}
+    {% if value.links.link_page %}
+        <a href="{{ value.links.link_page.url }}">page</a>
+    {% endif %}
+    {% if value.links.link_document %}
+        <a href="{{ value.links.link_document.url }}">document</a>
+    {% endif %}
+
+{% endblock streamblock %}

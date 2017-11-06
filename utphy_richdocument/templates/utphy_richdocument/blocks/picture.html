@@ -1,0 +1,12 @@
+{#{% extends 'utphy_richdocument/base_utphy_richdocument.html' %}#}
+{% load static wagtailcore_tags wagtailimages_tags %}
+
+{% block streamblock %}
+    <section class="picture">
+        <div>{% image value.photo width-400 %}</div>
+        <div class="credit">{{ value.credit }}</div>
+        <div class="caption">{{ value.caption }}</div>
+        <div class="link">{% include 'utphy_richdocument/blocks/links.html' %}</div>
+    </section>
+
+{% endblock streamblock %}

@@ -1,6 +1,5 @@
 from __future__ import unicode_literals
 
-from django.db import models
 from django.utils.encoding import force_text
 
 from wagtail.contrib.table_block.blocks import TableBlock
@@ -156,6 +155,7 @@ class PictureBlock(blocks.StructBlock):
 
     class Meta:
         icon = 'image'
+        template = 'utphy_richdocument/blocks/picture.html'
 
 
 class AlbumBlock(blocks.StructBlock):
@@ -166,6 +166,7 @@ class AlbumBlock(blocks.StructBlock):
 
     class Meta:
         icon = 'cogs'
+        template = 'utphy_richdocument/blocks/album.html'
 
 
 BLOCK_TYPES = [

@@ -1,0 +1,12 @@
+{% extends 'utphy_richdocument/base_utphy_richdocument.html' %}
+{% load static wagtailimages_tags %}
+
+{% block streamblock %}
+    <section class="album">
+    {% for value in value.add_pictures %}
+        {% include 'utphy_richdocument/blocks/picture.html' %}
+    {% endfor %}
+    
+{#        slideshow: {{ value.has_slideshow }}#}
+    </section>
+{% endblock streamblock %}

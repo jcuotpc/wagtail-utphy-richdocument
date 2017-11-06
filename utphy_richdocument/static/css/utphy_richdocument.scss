@@ -149,3 +149,48 @@ pre.content-byline {
 .math-formula {
 
 }
+
+// picture
+.picture {
+  display: flex;
+  flex-direction: column;
+  width: 45vw;
+  
+  @media screen and (min-width: 640px) {
+    width: 28vw;
+  }
+  
+  @media screen and (min-width: 1024px) {
+    width: 15vw;
+  }
+
+  .caption {
+    font-weight: bold;
+    font-size: .8rem;
+  }
+
+  .credit {
+    &::before {
+      content: 'credit: '
+    }
+    align-self: flex-end;
+    font-style: italic;
+    font-size: .7rem;
+    color: #8d8d8d;
+  }
+  
+}
+
+// end picture
+
+// album
+.album {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 1 0 100%;
+  justify-content: space-evenly;
+  align-items: flex-end;
+  margin: 1rem 0;
+}
+
+// end album
