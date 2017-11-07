@@ -4,8 +4,12 @@
 {% block streamblock %}
     <section class="picture">
         <div>{% image value.photo width-400 %}</div>
-        <div class="credit">{{ value.credit }}</div>
-        <div class="caption">{{ value.caption }}</div>
+        {% if value.credit %}
+            <div class="credit">{{ value.credit }}</div>
+        {% endif %}
+        {% if value.caption %}
+            <div class="caption">{{ value.caption }}</div>
+        {% endif %}
         <div class="link">{% include 'utphy_richdocument/blocks/links.html' %}</div>
     </section>
 

@@ -1,12 +1,36 @@
 {% extends 'utphy_richdocument/base_utphy_richdocument.html' %}
 {% load static wagtailimages_tags %}
 
+{% block extra_css %}
+    <!-- Add the slick-theme.css if you want default styling -->
+    <link rel="stylesheet" type="text/css"
+          href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.css"/>
+    <!-- Add the slick-theme.css if you want default styling -->
+    {#    <link rel="stylesheet" type="text/css"#}
+    {#          href="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick-theme.css"/>#}
+{% endblock extra_css %}
+
+
 {% block streamblock %}
     <section class="album">
-    {% for value in value.add_pictures %}
-        {% include 'utphy_richdocument/blocks/picture.html' %}
-    {% endfor %}
-    
-{#        slideshow: {{ value.has_slideshow }}#}
+        <h3>{{ value.album_title }}</h3>
+        <p>{{ value.description }}</p>
+        {% for value in value.add_pictures %}
+            {% include 'utphy_richdocument/blocks/picture.html' %}
+        {% endfor %}
+
+        {#        slideshow: {{ value.has_slideshow }}#}
     </section>
 {% endblock streamblock %}
+
+{% block extra_js %}
+     <script type="text/javascript"
+            src="//cdn.jsdelivr.net/gh/kenwheeler/slick@1.8.1/slick/slick.min.js"></script>
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('.album').slick();
+      });
+    </script>
+
+{% endblock extra_js %}

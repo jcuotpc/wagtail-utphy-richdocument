@@ -159,6 +159,10 @@ class PictureBlock(blocks.StructBlock):
 
 
 class AlbumBlock(blocks.StructBlock):
+    album_title = blocks.CharBlock(
+        required=False, 
+        help_text="Optional, add a title for the album")
+    description = blocks.TextBlock(required=False)
     has_slideshow = blocks.BooleanBlock(required=False)
     add_pictures = blocks.ListBlock(
         PictureBlock()
