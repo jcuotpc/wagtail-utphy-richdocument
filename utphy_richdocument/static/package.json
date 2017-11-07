@@ -1,11 +1,9 @@
 {
-  "name": "static",
+  "name": "wagtail_rich_document",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "ISC"
+  "license": "MIT",
+  "dependencies": {
+    "slick-carousel": "^1.8.1"
+  }
 }
