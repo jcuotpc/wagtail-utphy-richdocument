@@ -1,4 +1,4 @@
-**Please note, this project is no longer being maintained!**
+**This project is no longer being maintained!**
 
 utphy richdocument
 ==================
